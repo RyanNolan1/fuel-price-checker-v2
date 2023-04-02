@@ -1,7 +1,6 @@
-// require("dotenv").config();
+require("dotenv").config();
 
-const api_key = "";
-//  process.env.API_KEY;
+const api_key = process.env.API_KEY;
 
 fetch(
   `https://uk1.ukvehicledata.co.uk/api/datapackage/FuelPriceData?v=2&api_nullitems=1&auth_apikey=${api_key}&key_POSTCODE=BB185AJ`
@@ -24,26 +23,16 @@ function sortByDistance(stationData) {
 
 const selectedFuel = "Diesel";
 
-let sortedByPriceArray = [];
+let fuelTypeArray = [];
 
 function sortByPrice(stationData) {
   stationData.forEach(function (station) {
     const fuelTypes = station.FuelPriceList;
-    // console.log(station.FuelPriceList)
+    console.log(station);
 
     fuelTypes.forEach(function (fuel) {
       if (fuel.FuelType === selectedFuel) {
-        console.log(
-          station.DistanceFromSearchPostcode,
-          station.Brand,
-          station.Name,
-          station.Street,
-          station.Town,
-          station.County,
-          station.Postcode,
-          fuel.FuelType,
-          fuel.LatestRecordedPrice.InPence
-        );
+        console.log(fuel);
       }
     });
   });
