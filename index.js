@@ -23,28 +23,24 @@ function sortByDistance(stationData) {
 
 const selectedFuel = "Diesel";
 
-let fuelTypeArray = [];
-
 function sortByPrice(stationData) {
-  stationData.forEach(function (station) {
-    const fuelTypes = station.FuelPriceList;
-    console.log(station);
+  priceArray = [];
 
-    fuelTypes.forEach(function (fuel) {
-      if (fuel.FuelType === selectedFuel) {
-        console.log(fuel);
-      }
+  stationData.forEach((station) => {
+    station.FuelPriceList.forEach((fuel) => {
+      if (fuel.FuelType === selectedFuel)
+        priceArray.push({
+          Brand: station.Brand,
+          County: station.County,
+          DistanceFromSearchPostcode: station.DistanceFromSearchPostcode,
+          Name: station.Name,
+          Street: station.Street,
+          Suburb: station.Suburb,
+          FuelPrice: fuel.LatestRecordedPrice.InPence,
+          FuelType: fuel.FuelType,
+        });
     });
   });
+  priceArray.sort((a, b) => a.FuelPrice - b.FuelPrice);
+  console.log(priceArray);
 }
-
-//     station.FuelPriceList.forEach(function (fuel) {
-//       if (fuelType === fuel.FuelType) {
-//         priceArray.push(station);
-//       }
-//     });
-//   });
-//   const sortedByPrice = priceArray.sort((a, b) => {
-//     return a.LatestRecordedPrice.InPence - b.LatestRecordedPrice.InPence;
-//   });
-//   console.log(sortedByPrice);
