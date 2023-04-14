@@ -1,6 +1,6 @@
 // require("dotenv").config();
 
-const api_key = "173f4bf8-f4eb-47e7-ad4d-ec6959dc1a38";
+const api_key = "";
 
 // process.env.API_KEY;
 
@@ -11,28 +11,19 @@ fetch(
   .then((data) => {
     const stationData =
       data.Response.DataItems.FuelStationDetails.FuelStationList;
-    sortByDistance(stationData);
     sortByPrice(stationData);
   })
   .catch((error) => console.log(error));
 
-function sortByDistance(stationData) {
-  const sortedByDistance = stationData.sort((a, b) => {
-    return a.DistanceFromSearchPostcode - b.DistanceFromSearchPostcode;
-  });
-  // displayStations(sortedByDistance)
-  // console.log(sortedByDistance);
-}
+let selectedFuel = "Unleaded";
 
-const selectedFuel = "Diesel";
+let newFuelArray = [];
 
 function sortByPrice(stationData) {
-  priceArray = [];
-
   stationData.forEach((station) => {
     station.FuelPriceList.forEach((fuel) => {
       if (fuel.FuelType === selectedFuel)
-        priceArray.push({
+        newFuelArray.push({
           Brand: station.Brand,
           County: station.County,
           DistanceFromSearchPostcode: station.DistanceFromSearchPostcode,
@@ -44,9 +35,13 @@ function sortByPrice(stationData) {
         });
     });
   });
-  priceArray.sort((a, b) => a.FuelPrice - b.FuelPrice);
+  newFuelArray.sort((a, b) => a.FuelPrice - b.FuelPrice);
+  displayStations(newFuelArray);
+}
 
-  const stations = priceArray.map((station) => `
+function displayStations(data) {
+  const stations = newFuelArray.map(
+    (station) => `
   <li>
   ${station.Brand}
   ${station.County}
@@ -54,8 +49,42 @@ function sortByPrice(stationData) {
   ${station.Name}
   ${station.Street}
   ${station.FuelPrice}
-  </li>`);
+  </li>`
+  );
 
   const stationList = document.querySelector("#station-list");
   stationList.innerHTML = stations.join("");
 }
+
+// function sortByDistance(arr) {
+//   arr.sort((a, b) => {
+//     return a.DistanceFromSearchPostcode - b.DistanceFromSearchPostcode;
+//   });
+//   displayStations(arr);
+// }
+
+// sortByDistance(newFuelArray)
+
+// function sortByDistance(arr) {
+//   priceArray = [];
+
+//   stationData.forEach((station) => {
+//     station.FuelPriceList.forEach((fuel) => {
+//       if (fuel.FuelType === selectedFuel)
+//         priceArray.push({
+//           Brand: station.Brand,
+//           County: station.County,
+//           DistanceFromSearchPostcode: station.DistanceFromSearchPostcode,
+//           Name: station.Name,
+//           Street: station.Street,
+//           Suburb: station.Suburb,
+//           FuelPrice: fuel.LatestRecordedPrice.InPence,
+//           FuelType: fuel.FuelType,
+//         });
+//     });
+//   });
+//   priceArray.sort((a, b) => {
+//     return a.DistanceFromSearchPostcode - b.DistanceFromSearchPostcode;
+//   });
+//   displayStations(priceArray);
+// }
