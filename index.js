@@ -3,12 +3,12 @@
 const api_key = "";
 
 // process.env.API_KEY;
+let selectedFuel;
+let stationData;
 
 document.addEventListener("DOMContentLoaded", () => {
   const postCodeInput = document.getElementById("post-code-input");
   const postCodeSubmit = document.getElementById("post-code-submit");
-  let selectedFuel;
-  let stationData;
 
   postCodeSubmit.addEventListener("click", () => {
     postCode = postCodeInput.value;
@@ -85,5 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const distanceButton = document.getElementById("sort-by-distance");
   distanceButton.addEventListener("click", function () {
     sortByDistance(newFuelArray);
+  });
+
+  const priceButton = document.getElementById("sort-by-price");
+  priceButton.addEventListener("click", function () {
+    sortByPrice(selectedFuel, stationData);
   });
 });
