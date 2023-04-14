@@ -22,7 +22,7 @@ li {
 #button-section {
     display: flex;
     gap: 5px;
-    align-content: space-around;
+    justify-content: center;
 }
 
 .button {

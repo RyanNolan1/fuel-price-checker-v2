@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let newFuelArray = [];
 
   function sortByPrice(selectedFuel, stationData) {
-    console.log(selectedFuel);
+    newFuelArray = [];
     stationData.forEach((station) => {
       station.FuelPriceList.forEach((fuel) => {
         if (fuel.FuelType === selectedFuel)
@@ -56,22 +56,22 @@ document.addEventListener("DOMContentLoaded", () => {
     displayStations(newFuelArray);
   }
 
-  function displayStations() {
-    const stations = newFuelArray.map(
+  function displayStations(fuelArray) {
+    const stations = fuelArray.map(
       (station) => `
-  <li>
-  ${station.Brand}
-  ${station.County}
-  ${station.DistanceFromSearchPostcode}
-  ${station.Name}
-  ${station.Street}
-  ${station.FuelPrice}
-  </li>`
-    );
-
-    const stationList = document.querySelector("#station-list");
-    stationList.innerHTML = stations.join("");
-  }
+      <li>
+      ${station.Brand}
+      ${station.County}
+      ${station.DistanceFromSearchPostcode}
+      ${station.Name}
+      ${station.Street}
+      ${station.FuelPrice}
+      </li>`
+      );
+      const stationList = document.getElementById("station-list");
+      stationList.innerHTML = "";
+      stationList.innerHTML = stations.join("");
+    }
 });
 
 // function sortByDistance(arr) {
