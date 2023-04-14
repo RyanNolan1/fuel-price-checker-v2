@@ -18,7 +18,7 @@ function sortByDistance(stationData) {
   const sortedByDistance = stationData.sort((a, b) => {
     return a.DistanceFromSearchPostcode - b.DistanceFromSearchPostcode;
   });
-  // console.log(sortedByDistance)
+  // console.log(sortedByDistance);
 }
 
 const selectedFuel = "Diesel";
@@ -42,5 +42,5 @@ function sortByPrice(stationData) {
     });
   });
   priceArray.sort((a, b) => a.FuelPrice - b.FuelPrice);
-  console.log(priceArray);
+  // console.log(priceArray);
 }
