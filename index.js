@@ -8,9 +8,8 @@ let stationData;
 
 document.addEventListener("DOMContentLoaded", () => {
   const postCodeInput = document.getElementById("post-code-input");
-  const postCodeSubmit = document.getElementById("post-code-submit");
 
-  postCodeSubmit.addEventListener("click", () => {
+  postCodeInput.addEventListener("change", () => {
     postCode = postCodeInput.value;
 
     const buttons = document.querySelectorAll(".fuel-button");
