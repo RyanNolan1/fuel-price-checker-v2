@@ -45,7 +45,8 @@ function sortByPrice(selectedFuel, stationData) {
             DistanceFromSearchPostcode: station.DistanceFromSearchPostcode,
             Name: station.Name,
             Street: station.Street,
-            Suburb: station.Suburb,
+            Suburb: station.Suburb ? station.Suburb : station.Town,
+            Postcode: station.Postcode,
             FuelPrice: fuel.LatestRecordedPrice.InPence,
             FuelType: fuel.FuelType,
           });
@@ -60,12 +61,17 @@ function displayStations(fuelArray) {
   const stations = fuelArray.map(
     (station) => `
       <li>
-      ${station.Brand}
-      ${station.County}
-      ${station.DistanceFromSearchPostcode}
-      ${station.Name}
-      ${station.Street}
-      ${station.FuelPrice}
+      <section id="price-container">
+      <h1>${station.FuelPrice}p</h1>
+      </section>
+      <section id="details-container">
+      <h2>${station.Brand}</h2>
+      ${station.Name}</br>
+      ${station.Suburb}</br>
+      ${station.Street}</br>
+      ${station.Postcode}</br>
+      ${station.DistanceFromSearchPostcode} Miles Away</br>
+      </section>
       </li>`
   );
   const stationList = document.getElementById("station-list");

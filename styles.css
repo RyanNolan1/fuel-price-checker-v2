@@ -10,20 +10,11 @@
   flex-direction: column;
 }
 
-
-li {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    height:6rem;
-    margin-top:1rem;
-    background-color: aqua;
-}
-
 #button-section {
     display: flex;
     gap: 5px;
     justify-content: center;
+    margin-top: 1rem;
 }
 
 .fuel-button {
@@ -32,4 +23,32 @@ li {
 
 .button {
   width:10rem;
+}
+
+li {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    min-height:9rem;
+    margin-top:1rem;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+}
+
+#price-container {
+  background-color: rgb(0, 2, 115);
+  display: flex;
+  align-items: center;
+  padding:1rem;
+}
+
+h1 {
+  color: white;
+}
+
+#details-container {
+  display: flex;
+  flex-direction: column;
+  padding:.5rem;
 }
