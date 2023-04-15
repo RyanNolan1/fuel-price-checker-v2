@@ -4,14 +4,35 @@
   box-sizing: border-box;
 }
 
-#container {
+body {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width:80rem;
+  background-color: rgba(225, 222, 222, 0.388);
+}
+
+header {
+  background-color: rgb(0, 2, 115);
+  min-height:10rem;
+  width:100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
+
 #post-code-input {
-  width: 20rem;
+  width: 16rem;
   height: 4rem;
   text-align: center;
   font-size: 2rem;
@@ -24,26 +45,64 @@
   gap: 10px;
   margin: auto;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .fuel-button {
-  width: 10rem;
+  min-width:10rem;
+  border-radius: 0px;
+  border-width: 0px;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.fuel-button:hover {
+  cursor:pointer;
+}
+
+#unleaded {
+  background-color: green;
+  color: white;
+}
+
+#super-unleaded {
+  background-color:azure;
+  color: green;
+}
+
+#diesel {
+  background-color: black;
+  color: white;
+}
+
+#premium-diesel {
+  background-color: black;
+  color: white;
 }
 
 .button {
-  width: 10rem;
   height: 2rem;
+  border-radius: none;
+  border-width: 0px;
+  background-color: rgb(0, 2, 115);
+  color: white;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.button:hover {
+  cursor:pointer;
 }
 
 li {
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  min-height: 8rem;
-  margin-top: 1rem;
+  min-height: 10rem;
   display: flex;
   flex-direction: row;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 1rem;
 }
 
 #price-container {
