@@ -6,41 +6,51 @@
 
 #container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+}
+
+#post-code-input {
+  width: 20rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 2rem;
 }
 
 #button-section {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  margin: auto;
+  margin-top: 1rem;
 }
 
 .fuel-button {
-    width:10rem;
+  width: 10rem;
 }
 
 .button {
-  width:10rem;
+  width: 10rem;
+  height: 2rem;
 }
 
 li {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    min-height:9rem;
-    margin-top:1rem;
-    background-color: aqua;
-    display: flex;
-    flex-direction: row;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  min-height: 8rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #price-container {
   background-color: rgb(0, 2, 115);
   display: flex;
   align-items: center;
-  padding:1rem;
+  padding: 1rem;
 }
 
 h1 {
@@ -50,5 +60,6 @@ h1 {
 #details-container {
   display: flex;
   flex-direction: column;
-  padding:.5rem;
+  width: 100%;
+  padding: 1rem;
 }
