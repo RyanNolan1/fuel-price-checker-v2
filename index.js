@@ -1,7 +1,11 @@
-require("dotenv").config();
+let api_key;
 
-const api_key = process.env.API_KEY;
-
+fetch("http://localhost:8080/api_key")
+  .then((response) => response.json())
+  .then((data) => {
+    api_key = data.API_KEY;
+  })
+  .catch((error) => console.error(error));
 
 let selectedFuel;
 let stationData;
