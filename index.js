@@ -1,8 +1,8 @@
-// require("dotenv").config();
+require("dotenv").config();
 
-const api_key = "";
+const api_key = process.env.API_KEY;
 
-// process.env.API_KEY;
+
 let selectedFuel;
 let stationData;
 
