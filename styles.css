@@ -36,7 +36,7 @@ header {
 }
 
 #fuel-price-logo {
-  width: 50%;
+  width: 60%;
 }
 
 #post-code-input {
@@ -57,11 +57,12 @@ header {
 }
 
 .fuel-button {
-  min-width:10rem;
   border-radius: 0px;
   border-width: 0px;
   font-size: .8rem;
   font-weight: 600;
+  height:3rem;
+  width: 10rem;
 }
 
 .fuel-button:hover {
@@ -89,7 +90,7 @@ header {
 }
 
 .button {
-  height: 2rem;
+  height: 3rem;
   border-radius: none;
   border-width: 0px;
   background-color: rgb(0, 2, 115);
@@ -140,4 +141,16 @@ h1 {
   flex-direction: column;
   width: 100%;
   padding: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .fuel-button {
+    width:8rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size:.8rem;
+  }
 }

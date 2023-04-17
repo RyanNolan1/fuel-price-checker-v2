@@ -70,11 +70,11 @@ function displayStations(fuelArray) {
       </section>
       <section id="details-container">
       <h2>${station.Brand}</h2>
-      ${station.Name}</br>
+      <p>${station.Name}</br>
       ${station.Suburb}</br>
       ${station.Street}</br>
       ${station.Postcode}</br>
-      ${station.DistanceFromSearchPostcode} Miles Away</br>
+      <b>${station.DistanceFromSearchPostcode}</b> Miles Away </br>
       </section>
       </li>`
   );
