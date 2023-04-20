@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function sortByPrice(selectedFuel, stationData) {
-  let newFuelArray = [];
+  newFuelArray = [];
   if (stationData) {
     stationData.forEach((station) => {
       station.FuelPriceList.forEach((fuel) => {
