@@ -64,19 +64,21 @@ function sortByPrice(selectedFuel, stationData) {
 function displayStations(fuelArray) {
   const stations = fuelArray.map(
     (station) => `
-      <li>
+    <li>
       <section id="price-container">
-      <h1>${station.FuelPrice}p</h1>
+        <h1>${station.FuelPrice}p</h1>
       </section>
       <section id="details-container">
-      <h2>${station.Brand}</h2>
-      <p>${station.Name}</br>
-      ${station.Suburb}</br>
-      ${station.Street}</br>
-      ${station.Postcode}</br>
-      <b>${station.DistanceFromSearchPostcode}</b> Miles Away </br>
+        <h2>${station.Brand}</h2>
+        <p>
+          ${station.Name}</br>
+          ${station.Suburb}</br>
+          ${station.Street}</br>
+          ${station.Postcode}</br>
+          <b>${station.DistanceFromSearchPostcode}</b> Miles Away
+       </p>
       </section>
-      </li>`
+    </li>`  
   );
   const stationList = document.getElementById("station-list");
   stationList.innerHTML = "";
