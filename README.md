@@ -14,14 +14,14 @@ This is a tiny app to compare fuel prices in fuel stations near to an entered po
 # Set Up
 
 1. Get an API key from ukvehicledata.co.uk
-2. Create a .env file in the main directory and add your API key and the port number you want the application to listen to:
+2. Edit the .env-example file in the main directory, remove the example API key and insert your own then remove "-example" from the file name. Like this:
 
 - `API_KEY=[insert your API key here]`
-- `PORT=[insert the desired port number here]`
+- `PORT=8080`
 
-4. once the .env is done and placed in the directory type "npm start" in the terminal to start the server.
-5. you will see a message in the termal "Server started on port [port number entered in the .env]" to show that the server is started.
-6. finally go live with index.js and you will be able to use the app.
+4. once the .env is edited and saved type "npm start" in the terminal to start the server.
+5. you will see a message in the terminal "Server started on port 8080" to show that the server is started.
+6. Finally open index.html to use the app.
 
 # Using the App
 

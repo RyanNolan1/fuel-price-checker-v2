@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postCodeInput = document.getElementById("post-code-input");
 
   postCodeInput.addEventListener("change", () => {
-    postCode = postCodeInput.value;
+    let postCode = postCodeInput.value;
 
     const buttons = document.querySelectorAll(".fuel-button");
     buttons.forEach((button) => {
@@ -57,29 +57,30 @@ function sortByPrice(selectedFuel, stationData) {
       });
     });
     newFuelArray.sort((a, b) => a.FuelPrice - b.FuelPrice);
-    displayStations(newFuelArray);
+    return displayStations(newFuelArray);
   }
 }
 
 function displayStations(fuelArray) {
   const stations = fuelArray.map(
     (station) => `
-      <li>
+    <li>
       <section id="price-container">
-      <h1>${station.FuelPrice}p</h1>
+        <h1>${station.FuelPrice}p</h1>
       </section>
       <section id="details-container">
-      <h2>${station.Brand}</h2>
-      <p>${station.Name}</br>
-      ${station.Suburb}</br>
-      ${station.Street}</br>
-      ${station.Postcode}</br>
-      <b>${station.DistanceFromSearchPostcode}</b> Miles Away </br>
+        <h2>${station.Brand}</h2>
+        <p>
+          ${station.Name}</br>
+          ${station.Suburb}</br>
+          ${station.Street}</br>
+          ${station.Postcode}</br>
+          <b>${station.DistanceFromSearchPostcode}</b> Miles Away
+       </p>
       </section>
-      </li>`
+    </li>`  
   );
   const stationList = document.getElementById("station-list");
-  stationList.innerHTML = "";
   stationList.innerHTML = stations.join("");
 }
 
