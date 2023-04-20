@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postCodeInput = document.getElementById("post-code-input");
 
   postCodeInput.addEventListener("change", () => {
-    postCode = postCodeInput.value;
+    let postCode = postCodeInput.value;
 
     const buttons = document.querySelectorAll(".fuel-button");
     buttons.forEach((button) => {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function sortByPrice(selectedFuel, stationData) {
-  newFuelArray = [];
+  let newFuelArray = [];
   if (stationData) {
     stationData.forEach((station) => {
       station.FuelPriceList.forEach((fuel) => {
@@ -57,7 +57,7 @@ function sortByPrice(selectedFuel, stationData) {
       });
     });
     newFuelArray.sort((a, b) => a.FuelPrice - b.FuelPrice);
-    displayStations(newFuelArray);
+    return displayStations(newFuelArray);
   }
 }
 
