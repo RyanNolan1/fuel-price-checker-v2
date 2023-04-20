@@ -30,4 +30,4 @@ This is a tiny app to compare fuel prices in fuel stations near to an entered po
 3. Click "Sort By Distance" to order the list of fuel stations by nearest first
 4. Click "Sort By Price" to order the list of fuel stations by cheapest fuel first
 
-Please note only post codes with an "A" will work in the free API key
+Please note only post codes with an "A" will work with the free API key
