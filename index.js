@@ -81,7 +81,6 @@ function displayStations(fuelArray) {
     </li>`  
   );
   const stationList = document.getElementById("station-list");
-  stationList.innerHTML = "";
   stationList.innerHTML = stations.join("");
 }
 
